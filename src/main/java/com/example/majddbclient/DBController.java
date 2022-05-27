@@ -30,8 +30,7 @@ public class DBController {
 
     public void stmtTyped(){
         statement=stmtText.getText();
-        System.out.println(statement);
-
+//        System.out.println(statement);
     }
 
     public void populate(){
@@ -50,17 +49,17 @@ public class DBController {
             //Getting Column Names
             ResultSetMetaData meta = rs.getMetaData();
             int columnCount= meta.getColumnCount();
-            System.out.println("Column Count: "+ columnCount);
+//            System.out.println("Column Count: "+ columnCount);
 
 
-            //Adding the column names to an Arraylist for processing
+            //Adding the column names to an Arraylist for processing (To Add later to the actual TableView)
             List<String> columnNames = new ArrayList<>();
             for(int j=1;j<=columnCount;j++){
                 columnNames.add(meta.getColumnName(j));
             }
-            System.out.println(columnNames);
+//            System.out.println(columnNames);
 
-            //adding the Table columns to the table View
+            //Adding the Table columns to the table View
             for (int i = 0; i < columnCount; i++) {
                 final int finalIdx = i;
                 TableColumn<ObservableList<String>, String> column = new TableColumn<>(
@@ -81,10 +80,12 @@ public class DBController {
                 dataTable.getItems().add(row);
             }
 
-
+        //Handling Exceptions
         } catch (SQLSyntaxErrorException syntaxErrorException) {
+            AlertBox.display("Error","SQL Syntax Error");
             syntaxErrorException.printStackTrace();
         }catch (SQLException e){
+            AlertBox.display("Error","Something went wrong");
             e.printStackTrace();
 
         } finally {
@@ -100,10 +101,10 @@ public class DBController {
 
     }
 
+    //Clear the table before clicking the go button everytime
     public void ClearTable(){
         dataTable.getItems().clear();
         dataTable.getColumns().clear();
     }
-
 
 }
