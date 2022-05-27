@@ -1,14 +1,20 @@
 package com.example.majddbclient;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 
 public class DBController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    private TableView<ObservableList<String>> dataTable;
+
+    @FXML
+    private Button goButton;
+
+    @FXML
+    private TextArea stmtText;
+
 }
