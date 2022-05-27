@@ -8,8 +8,8 @@
 
 <FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.majddbclient.DBController">
    <children>
-      <TextArea fx:id="stmtText" prefHeight="117.0" prefWidth="463.0" />
-      <Button fx:id="goButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Go">
+      <TextArea fx:id="stmtText" onKeyTyped="#stmtTyped" prefHeight="117.0" prefWidth="463.0" />
+      <Button fx:id="goButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#populate" text="Go">
          <FlowPane.margin>
             <Insets left="52.0" />
          </FlowPane.margin>
