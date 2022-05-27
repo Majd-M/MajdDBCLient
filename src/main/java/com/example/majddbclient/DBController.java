@@ -19,7 +19,7 @@ public class DBController {
     private TableView<ObservableList<String>> dataTable;
 
     @FXML
-    private Button goButton;
+    public Button goButton;
 
     @FXML
     private TextArea stmtText;
@@ -98,7 +98,6 @@ public class DBController {
             }
         }
 
-
     }
 
     //Clear the table before clicking the go button everytime
@@ -106,5 +105,7 @@ public class DBController {
         dataTable.getItems().clear();
         dataTable.getColumns().clear();
     }
+
+
 
 }
